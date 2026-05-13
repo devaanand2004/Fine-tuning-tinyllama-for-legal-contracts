@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LegallyBound — AI Contract Risk Analyzer</title>
+    <meta name="description" content="Upload legal contracts and instantly extract clause risks using TinyLlama + Legal-BERT AI pipeline. Semantic search your contracts." />
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>" />
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__logo">
+                <div class="header__icon">⚖️</div>
+                <h1 class="header__title">LegallyBound</h1>
+            </div>
+            <p class="header__subtitle">
+                Upload a contract and let AI extract every clause risk — powered by TinyLlama &amp; Legal-BERT
+            </p>
+        </header>
+
+        <!-- Tabs -->
+        <nav class="tabs" role="tablist" id="main-tabs">
+            <button class="tab-btn active" role="tab" data-tab="upload" id="tab-upload" aria-selected="true">
+                📄 Upload &amp; Analyze
+            </button>
+            <button class="tab-btn" role="tab" data-tab="search" id="tab-search" aria-selected="false">
+                🔍 Semantic Search
+            </button>
+        </nav>
+
+        <!-- ═══ TAB 1: Upload & Analyze ═══ -->
+        <section class="tab-content active" id="panel-upload" role="tabpanel">
+            <div class="card">
+                <div class="upload-zone" id="upload-zone">
+                    <span class="upload-zone__icon">📤</span>
+                    <div class="upload-zone__title">Drop your contract here</div>
+                    <div class="upload-zone__hint">PDF or TXT  •  Max 50 MB</div>
+                    <input type="file" accept=".pdf,.txt" id="file-input" />
+                </div>
+
+                <!-- File Info -->
+                <div class="file-info" id="file-info">
+                    <span class="file-info__icon" id="file-icon">📄</span>
+                    <div>
+                        <div class="file-info__name" id="file-name">—</div>
+                        <div class="file-info__meta" id="file-meta">—</div>
+                    </div>
+                    <div class="file-info__actions">
+                        <button class="btn btn--primary" id="btn-analyze" disabled>
+                            🔬 Extract Risks
+                        </button>
+                        <button class="btn btn--danger" id="btn-clear">✕</button>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-bar" id="upload-progress">
+                    <div class="progress-bar__fill indeterminate"></div>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div class="loader" id="risk-loader">
+                <div class="spinner"></div>
+                <div class="loader__text">Analyzing clauses with TinyLlama + Legal-BERT… this may take a few minutes</div>
+            </div>
+
+            <!-- Risk Summary -->
+            <div id="risk-summary-container"></div>
+
+            <!-- Risk Results -->
+            <div id="risk-results"></div>
+        </section>
+
+        <!-- ═══ TAB 2: Semantic Search ═══ -->
+        <section class="tab-content" id="panel-search" role="tabpanel">
+            <div class="card">
+                <div class="search-bar">
+                    <input
+                        type="text"
+                        class="search-bar__input"
+                        id="search-input"
+                        placeholder="Ask a question about your contract…"
+                        disabled
+                    />
+                    <button class="btn btn--primary" id="btn-search" disabled>
+                        🔍 Search
+                    </button>
+                </div>
+                <div class="progress-bar" id="search-progress">
+                    <div class="progress-bar__fill indeterminate"></div>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div class="loader" id="search-loader">
+                <div class="spinner"></div>
+                <div class="loader__text">Searching contract with AI…</div>
+            </div>
+
+            <!-- Search Results -->
+            <div id="search-results">
+                <div class="empty-state">
+                    <div class="empty-state__icon">🔍</div>
+                    <div class="empty-state__title">Upload a contract first</div>
+                    <p>Then search across all its clauses using natural language</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <span id="toast-icon">✅</span>
+        <span class="toast__text" id="toast-text">—</span>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

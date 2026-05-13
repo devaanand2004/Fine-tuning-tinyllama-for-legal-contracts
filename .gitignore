@@ -1,0 +1,45 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Model weights (too large for GitHub, download separately)
+TinyLlama-1.1B-Chat-v1.0/
+models/legal-bert-base-uncased/
+models/legallybound_B/
+models/risk_classifier/checkpoint-*/
+models/risk_classifier/model.safetensors
+models/risk_classifier/training_args.bin
+
+# Dataset files (too large for GitHub)
+CUAD_v1/
+data/
+cuad_risk_labels.csv
+
+# DuckDB database
+legallybound.duckdb
+
+# LoRA fine-tuning (excluded from repo)
+train.py
+merge_and_save.py
+eval_finetuned.py
+checkpoints/
+
+# LoRA evaluation results
+results/variant_B_eval_results.json
+results/variant_B_loss.json
+
+# User uploads
+uploads/
+
+# PDF presentation
+*.pdf
+
+# IDE / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

@@ -1,0 +1,92 @@
+LegallyBound — Zero-shot Hallucination Spot-Check
+============================================================
+
+── Sample 1 ──────────────────────────────────────────
+CLAUSE TYPE : Highlight the parts (if any) of this contract related to "Parties" that should be reviewed by a lawyer. Details: The two or more parties who signed the contract
+
+GROUND TRUTH:
+On2
+
+GENERATED   :
+the key points of the contract and provide a summary of the main clauses.
+
+FLAG (human review): Does the generated text cite any
+statute, section number, or legal clause name that does
+NOT appear verbatim in the contract excerpt above?
+──────────────────────────────────────────────────────────
+
+── Sample 2 ──────────────────────────────────────────
+CLAUSE TYPE : Highlight the parts (if any) of this contract related to "Uncapped Liability" that should be reviewed by a lawyer. Details: Is a party’s liability uncapped upon the breach of its obligation in the contract? This also includes uncap liability for a particular type of breach such as IP infringement or breach of confidentiality obligation.
+
+GROUND TRUTH:
+EXCEPT AS SET FORTH IN SECTION 6 AND 7.1,              ------------------------ UNDER  NO  CIRCUMSTANCES  WILL  EITHER  PARTY  BE  LIABLE TO THE OTHER UNDER ANY CONTRACT,  STRICT  LIABILITY, NEGLIGENCE OR OTHER LEGAL OR EQUITABLE THEORY, FOR ANY  INCIDENTAL  OR CONSEQUENTIAL DAMAGES OR LOST PROFITS IN CONNECTION WITH THE SUBJECT  MATTER  OF  THIS  AGREEMENT.
+
+GENERATED   :
+by  reference.
+
+     1.2     "NETTAXI Brand Features" means the NETTAXI name and logo and other trademarks,  trade  names  and service names including but not limited to those set forth on Exhibit B attached hereto and incorporated herein by reference.
+
+     1.3     "Agreement" means this CO-BRANDING AGREEMENT.
+
+     1.4     "Effective Date" means the date of execution of this Agreement.
+
+     1.5     "SpinRecords.com" means SpinRecords.com, a Delaware Corporation.
+
+     1.6
+
+FLAG (human review): Does the generated text cite any
+statute, section number, or legal clause name that does
+NOT appear verbatim in the contract excerpt above?
+──────────────────────────────────────────────────────────
+
+── Sample 3 ──────────────────────────────────────────
+CLAUSE TYPE : Highlight the parts (if any) of this contract related to "License Grant" that should be reviewed by a lawyer. Details: Does the contract contain a license granted by one party to its counterparty?
+
+GROUND TRUTH:
+Upon the release of the Source Code to Corio pursuant to         Section 12.2 of this Agreement, Corio shall have a royalty-free,         nonexclusive, nontransferable, right and license in the Territory to use         and modify the Source Code to support and maintain the Software until         the expiration or termination of Corio's Customers' End User License         Agreements.
+
+GENERATED   :
+icense and Hosting Agreement" and "SOFTWARE USER"
+
+FLAG (human review): Does the generated text cite any
+statute, section number, or legal clause name that does
+NOT appear verbatim in the contract excerpt above?
+──────────────────────────────────────────────────────────
+
+── Sample 4 ──────────────────────────────────────────
+CLAUSE TYPE : Highlight the parts (if any) of this contract related to "Minimum Commitment" that should be reviewed by a lawyer. Details: Is there a minimum order size or minimum amount or units per-time period that one party must buy from the counterparty under the contract?
+
+GROUND TRUTH:
+Customer shall pay the Monthly Base Fee in advance on the first day of the calendar month in which the Services are to be performed.
+
+GENERATED   :
+of the contract that are relevant to the customer's needs.
+
+FLAG (human review): Does the generated text cite any
+statute, section number, or legal clause name that does
+NOT appear verbatim in the contract excerpt above?
+──────────────────────────────────────────────────────────
+
+── Sample 5 ──────────────────────────────────────────
+CLAUSE TYPE : Highlight the parts (if any) of this contract related to "Non-Transferable License" that should be reviewed by a lawyer. Details: Does the contract limit the ability of a party to transfer the license being granted to a third party?
+
+GROUND TRUTH:
+Impresse hereby grants to VerticalNet a non-exclusive, non-transferable, royalty-free, right and license to link to the Impresse Area of the Co-Branded Site.
+
+GENERATED   :
+or management of a party.
+
+1.2. CO-BRANDING AGREEMENT shall mean this Co-Branding Agreement between VerticalNet and Impresse.
+
+1.3. CO-BRANDED SITE shall mean the VerticalNet Sites and the Impresse Sites that are Co-Branded pursuant to this Agreement.
+
+1.4. CO-BRANDING PARTIES shall mean VerticalNet and Impresse.
+
+1.5. CO-BRANDING PARTY shall mean VerticalNet and Impresse.
+
+1.6. CO-BRANDING PARTY INTERE
+
+FLAG (human review): Does the generated text cite any
+statute, section number, or legal clause name that does
+NOT appear verbatim in the contract excerpt above?
+──────────────────────────────────────────────────────────
